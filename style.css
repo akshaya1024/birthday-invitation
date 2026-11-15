@@ -1,0 +1,503 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff1e8, #f8d9c4, #fff5e9);
+    color: #80502f;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.container {
+    max-width: 550px;
+    margin: auto;
+}
+
+.top-text {
+    letter-spacing: 3px;
+    font-size: 11px;
+    color: #b17a48;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    color: #a76c3d;
+    margin-top: 15px;
+    font-size: 36px;
+}
+
+.subtitle {
+    margin: 12px 0 25px;
+    color: #986b4c;
+}
+
+.cake-button {
+    background: #fffaf5;
+    border: 2px solid #e6bd8d;
+    border-radius: 25px;
+    padding: 25px;
+    width: 220px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px #b9855830;
+}
+
+.cake {
+    display: block;
+    font-size: 90px;
+    transition: transform 0.5s;
+    height: 200px;
+    width: 170px;
+    border-radius: 5px;
+}
+
+.cake-button:hover .cake {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.tap-text {
+    display: block;
+    margin-top: 10px;
+    color: #a76c3d;
+    font-size: 13px;
+}
+
+.invitation {
+    display: none;
+    background: #fffaf5;
+    border: 2px solid #e9c28f;
+    border-radius: 25px;
+    padding: 30px 20px;
+    margin: 30px auto;
+    box-shadow: 0 12px 35px #a76c3d25;
+    animation: reveal 1s ease forwards;
+}
+
+.invitation.show {
+    display: block;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.small-title {
+    letter-spacing: 3px;
+    font-size: 11px;
+    color: #bd8b55;
+}
+
+.invitation h2 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    margin-top: 15px;
+    color: #b77b43;
+}
+
+.teddy {
+    font-size: 65px;
+    margin: 10px;
+   
+}
+.teddy img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 5px solid peachpuff;
+}
+
+.name {
+    font-size: 42px;
+    margin: 5px;
+}
+
+.invitation h3 {
+    color: #bd8954;
+    font-size: 17px;
+}
+
+.message {
+    margin: 20px auto;
+    max-width: 350px;
+    line-height: 1.8;
+    color: #89654b;
+}
+
+
+.scratch-heading {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    color: #a76c3d;
+    margin: 25px 0 12px;
+}
+.scratch-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.scratch-card {
+    position: relative;
+    min-width: 0;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid #d8ad75;
+    background: #fff0d8;
+    touch-action: none;
+}
+
+.scratch-reveal {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #a66b35;
+    padding: 4px;
+    text-align: center;
+}
+
+.scratch-reveal span {
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.scratch-reveal strong {
+    font-family: Georgia, serif;
+    font-size: clamp(11px, 3vw, 18px);
+}
+
+.scratchCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+    touch-action: none;
+}
+.closing {
+    color: #a76c3d;
+    font-family: Georgia, serif;
+    font-style: italic;
+    margin-top: 20px;
+}
+.sparkle-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.sparkle {
+    position: absolute;
+    top: -20px;
+    color: #d69b35;
+    font-size: 18px;
+    animation: sparkleFall linear forwards;
+    text-shadow: 0 0 10px #f5d58a;
+}
+
+@keyframes sparkleFall {
+    0% {
+        transform: translateY(-20px) rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(105vh) rotate(360deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.baby-gallery {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.baby-gallery h2 {
+    color: #a76c3d;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.baby-gallery p {
+    color: #b88760;
+    margin-bottom: 20px;
+}
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.photo-card {
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 3px solid #e8c58f;
+    box-shadow: 0 5px 15px rgba(120, 75, 35, 0.12);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-card img:hover {
+    transform: scale(1.08);
+}
+
+@keyframes photoFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* VENUE CALENDAR */
+
+.venue-calendar {
+    max-width: 380px;
+    margin: 40px auto 20px;
+    padding: 25px 20px;
+    border: 2px solid #e4bd8c;
+    border-radius: 22px;
+    background: linear-gradient(
+        145deg,
+        #fffaf2,
+        #f8e3d1
+    );
+    box-shadow: 0 12px 30px #a76c3d25;
+    overflow: hidden;
+}
+
+.calendar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #b17a48;
+    letter-spacing: 2px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.calendar-icon {
+    font-size: 30px;
+}
+
+.venue-details h2 {
+    font-family: Georgia, serif;
+    color: #a76c3d;
+    font-size: 22px;
+    margin: 15px 0 10px;
+}
+
+.venue-details h3 {
+    color: #bd8954;
+    font-size: 16px;
+}
+
+.venue-details p {
+    color: #89654b;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 12px auto;
+    max-width: 270px;
+}
+
+.venue-address {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 18px 0;
+    color: #a76c3d;
+}
+
+.venue-address span {
+    font-size: 23px;
+}
+
+.map-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 10px;
+    background: linear-gradient(
+        135deg,
+        #bd8650,
+        #e4b878
+    );
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 6px 15px #a76c3d35;
+    transition: .3s;
+}
+
+.map-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 20px #a76c3d45;
+}
+
+.calendar-footer {
+    margin-top: 20px;
+    color: #b17a48;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 13px;
+}
+/* FINAL BIRTHDAY MESSAGE */
+
+.final-message {
+    max-width: 380px;
+    margin: 35px auto 20px;
+    padding: 30px 22px;
+    background: linear-gradient(
+        145deg,
+        #fffaf2,
+        #f8dfca,
+        #fff5e9
+    );
+    border: 2px solid #e4bd8c;
+    border-radius: 25px;
+    box-shadow: 0 12px 30px #a76c3d25;
+    text-align: center;
+}
+
+.message-heart {
+    font-size: 38px;
+    margin-bottom: 10px;
+    animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.message-label {
+    color: #bd8954;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.final-message h2 {
+    font-family: Georgia, serif;
+    color: #a76c3d;
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.message-divider {
+    color: #d4a04c;
+    margin: 18px 0;
+    letter-spacing: 5px;
+}
+
+.message-text {
+    color: #89654b;
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 13px 0;
+}
+
+.final-message h3 {
+    font-family: Georgia, serif;
+    color: #b77b43;
+    font-size: 19px;
+    margin-top: 15px;
+}
+
+.family-name {
+    color: #a76c3d;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.message-stars {
+    margin-top: 18px;
+    font-size: 20px;
+}
+
+@media (max-width: 480px) {
+    .final-message {
+        padding: 25px 17px;
+    }
+
+    .final-message h2 {
+        font-size: 22px;
+    }
+
+    .message-text {
+        font-size: 13px;
+    }
+
+    .venue-calendar {
+        width: 100%;
+        padding: 20px 15px;
+    }
+
+    .photo-grid {
+        gap: 9px;
+    }
+
+    .photo-card {
+        height:220px;
+    }
+
+    body {
+        padding: 25px 12px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .invitation {
+        padding: 25px 15px;
+    }
+
+    .name {
+        font-size: 36px;
+    }
+}
